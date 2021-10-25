@@ -1,0 +1,1338 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Purple Chopstix</title>
+
+    <!--  jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link href='https://unpkg.com/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet' />
+
+    <!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
+    <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+
+    <!-- Google Fonts stylesheet -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
+
+    <!-- Poppins Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- stylesheet -->
+    <link href="css/scrolling.css" rel="stylesheet">
+
+    <!-- internal CSS styles -->
+    <style>
+        /* navigation */
+        #mainNav {
+            /* offset-x | offset-y | blur-radius | spread-radius | color */
+            box-shadow: 0px 2px 10px 1px black;
+
+            /* type style */
+            font-family: 'Poppins Light';
+            font-style: white;
+            font-size: small;
+
+            position: fixed;
+            width: 100%;
+        }
+
+        #main-logo {
+            display: block;
+            width: 225px;
+            height: 65px;
+            background: url(gfx/logo_condensed-04.svg) no-repeat;
+            background-size: contain;
+            margin: 2px 20px;
+
+        }
+
+        #navSections {
+            padding-right: 20px;
+        }
+
+        /* social media */
+        #facebook {
+            display: block;
+            width: 25px;
+            height: 25px;
+            background: url(gfx/icons/facebook.svg) no-repeat;
+            background-size: contain;
+            margin: 5px 10px 0px 10px;
+        }
+
+        #twitter {
+            display: block;
+            width: 25px;
+            height: 25px;
+            background: url(gfx/icons/twitter.svg) no-repeat;
+            background-size: contain;
+            margin: 5px 10px 5px 0px;
+        }
+
+        #instagram {
+            display: block;
+            width: 25px;
+            height: 25px;
+            background: url(gfx/icons/instagram.svg) no-repeat;
+            background-size: contain;
+            margin: 5px 10px 0px 0px;
+        }
+
+        .social-links {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        /* text styles */
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 36pt;
+            line-height: inherit;
+
+        }
+
+
+        .section-head {
+            color: #705abf;
+            font-weight: normal;
+            font-family: 'Poppins';
+            font-size: 28pt;
+            text-align: center;
+        }
+
+        .section-head-lt {
+            color: white;
+            font-weight: normal;
+            font-family: 'Poppins';
+            font-size: 28pt;
+            text-align: center;
+        }
+
+        .section-subhead {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 200;
+            font-size: 16pt;
+            text-align: center;
+            color: #1c1a1a;
+
+        }
+
+        .section-subhead-lt {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 200;
+            font-size: 16pt;
+            color: white;
+            text-align: center;
+
+        }
+
+        .bracket {
+            font-family: 'Playfair Display';
+            font-weight: bold;
+            font-size: 36pt;
+            color: #705abf;
+        }
+
+        .bracket-lt {
+            font-family: 'Playfair Display';
+            font-weight: bold;
+            font-size: 36pt;
+            color: white;
+        }
+
+        .caption {
+            font-family: 'Poppins', sans-serif;
+            font-size: 12pt;
+            font-weight: 200;
+            font-style: italic;
+            color: #1c1a1a;
+        }
+
+        /* buttons & hr */
+        .btn-primary {
+            background-color: transparent;
+            border-color: #4ACAD9;
+            border-width: medium;
+
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus,
+        .btn-primary:active,
+        .btn-primary.active,
+        .open>.dropdown-toggle.btn-primary {
+            background-color: #4ACAD9;
+            border-color: #4ACAD9;
+            border-width: medium;
+
+        }
+
+        hr {
+            color: #705abf;
+
+        }
+
+        /* photos & carousel */
+        .parallaxCover {
+            background: linear-gradient(rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.6)),
+                url(images/bolivian.jpeg);
+            min-height: 800px;
+            position: relative;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .parallaxMenu {
+            background: linear-gradient(rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.6)),
+                url(images/red_soup.jpeg);
+            min-height: 800px;
+            position: relative;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .parallaxReservations {
+            background: linear-gradient(rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.6)),
+                url(images/interior_dining.jpeg);
+            min-height: 800px;
+            position: relative;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin-right: 15%;
+            margin-bottom: 1rem;
+            margin-left: 15%;
+            list-style: none;
+        }
+
+        /* reservations form */
+        .bootstrap-iso .formden_header h2,
+        .bootstrap-iso .formden_header p,
+        .bootstrap-iso form {
+            font-family: 'Poppins', sans-serif;
+            color: black
+        }
+
+        .bootstrap-iso form button,
+        .bootstrap-iso form button:hover {
+            color: #ffffff !important;
+        }
+
+        .bootstrap-iso .btn-custom {
+            background: #4acad9
+        }
+
+        .bootstrap-iso .btn-custom:hover {
+            background: #36b6c5;
+        }
+
+        .bootstrap-iso .form-control:focus {
+            border-color: #4acad9;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+
+        .bootstrap-iso .has-error .form-control:focus {
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+
+        .asteriskField {
+            color: red;
+        }
+
+
+        /* menu style */
+        .menu {
+            font-size: 14px;
+        }
+
+        .caption {
+            font-size: 14px;
+        }
+
+        /* map */
+        .map-responsive {
+            overflow: hidden;
+            padding-bottom: 56.25%;
+            position: relative;
+            height: 0;
+        }
+
+        .map-responsive iframe {
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+
+        }
+
+        /* footer */
+        .footer {
+            background-color: #705abf;
+            width: 100%;
+        }
+    </style>
+
+</head>
+
+<body id="page-top">
+
+    <!-- navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <div class="col-sm-6 col-md-2" style="margin-right: 100px;">
+                <!-- nav bar logo -->
+                <a class="navbar-brand js-scroll-trigger" id="main-logo" href="#page-top">
+                </a>
+            </div>
+
+            <!-- nav bar button on collapse -->
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse collapse" id="navbarCollapse">
+
+                <!-- nav bar sections -->
+                <ul class="navbar-nav nav-pills ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" id="navSections" style="color:black"
+                            href="#specials">Specials</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" id="navSections" style="color:black" href="#menu">Menu</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" id="navSections" style="color:black"
+                            href="#reservations">Reservations</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" id="navSections" style="color:black"
+                            href="#about">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" id="navSections" style="color:black"
+                            href="#contact">Contact Us</a>
+                    </li>
+                </ul>
+
+                <!-- social media icons -->
+                <div class="row float-right" style="padding-left: 15px;">
+                    <a class="nav-link" id="facebook" href="https://www.facebook.com/purplechopstix/" target="_blank"
+                        rel="noopener noreferrer"></a>
+
+                    <a class="nav-link" id="twitter" target="_blank" rel="noopener noreferrer"></a>
+
+                    <a class="nav-link" id="instagram" target="_blank" rel="noopener noreferrer"></a>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </nav>
+
+    <!-- header -->
+    <header class="white-type jumbotron parallaxCover">
+        <div class="container-fluid" style="padding-top: 50px;">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 style="text-align: center;">Serving worldly cuisine since 1989</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-auto col-md-auto mx-auto" style="margin-top: 50px; text-align: center;">
+
+                <!-- buttons -->
+                <a href="#reservations" class="btn btn-primary" style="margin-right: 10px;">
+                    <h6>Book Reservations</h6>
+                </a>
+                <a href="..." class="btn btn-primary" style="margin-left: 10px;">
+                    <h6>Order Carryout</h6>
+                </a>
+
+                <br>
+                <br>
+                <br>
+
+                <!-- hours of operation -->
+                <h6>Hours of Operation</h6>
+
+                <p style="text-align: center; color: white;">
+                    <em>Reservation Only</em><br>
+                    Wednesday – Saturday 5 p.m. to 8 p.m.<br>
+                    Sunday Brunch 11 a.m. to 1 p.m.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- specials -->
+    <section id="specials">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 section-head">
+                    <span class="bracket">{</span> <span class="section-head">Specials</span> <span
+                        class="bracket">}</span>
+                    <br>
+                    <p class="section-subhead" style="margin-top: 20px;">Our delicious specials change every week.</p>
+                    <p
+                        style="text-align: left; font-weight: 200; margin-top: 40px; border:1px; border-style:solid; border-color: #1c1a1a; padding: 2em;">
+                        <strong style="font-weight: bold; font-size: 14pt;">SPECIALS FOR OCT. 6–9</strong>
+                        <br>
+                        <br>
+
+                        <strong>Appetizer | $10</strong>
+                        <br>
+                        Three Crab Cakes served with our honey curry remoulade & lemon caper remoulade.
+                        <br>
+                        <br>
+
+                        <strong>Soup | $6</strong>
+                        <br>
+                        Cream of Mushroom Soup with Portobellos and button mushrooms with sautéed onions and celery in a
+                        savory creamy soup.
+                        <br>
+                        <br>
+
+                        <strong>Entrée | $22</strong>
+                        <br>
+                        Sesame Seed Crusted Salmon
+                        with honey curry remoulade, served with rice and a medley of sautéed vegetables. $22
+                        <br>
+                        <br>
+
+                        <strong>Desserts | $6.50 each</strong>
+                        <br>
+
+                        <em>Pumpkin Cheesecake</em> drizzled with caramel sauce.
+                        <br>
+                        <br>
+
+                        <em>Key Lime Pie</em> with gluten free crust, topped with toasted coconut.
+                        <br>
+                        <br>
+
+                        <em>Blueberry Cheesecake</em> topped with blueberry reduction and buttercream icing.
+                    </p>
+                    </p>
+                </div>
+
+                <!-- specials photos -->
+                <div class="col-md-6">
+                    <img class="img-fluid" src="images/salmon_special.jpeg" alt="Sesame Seed Crusted Salmon. $22">
+                    <p class="caption">Sesame Seed Crusted Salmon. $22</p><br>
+                    <img class="img-fluid" src="images/blueberry_cheesecake.jpeg" alt="Blueberry Cheesecake. $6.50">
+                    <p class="caption">Blueberry Cheesecake. $6.50</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- menu jumbotron image-->
+    <section id="menu" class="jumbotron parallaxMenu">
+        <div class="container-fluid" style="padding-top: 200px;">
+
+
+            <div class="row">
+                <div class="col-sm-12 section-head">
+                    <span class="bracket-lt">{</span> <span class="section-head-lt">Menu</span> <span
+                        class="bracket-lt">}</span>
+                    <br>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 mx-auto">
+                    <p class="section-subhead-lt" style="margin-top: 20px;">Our unique selection features international
+                        dishes ranging from Italian to Indian, Japanese to Mexican, and much more.</p>
+                </div>
+            </div>
+
+            <!-- <div class="col-md-4 section-head">
+                    <span class="bracket-lt">{</span> <span class="section-head-lt">Menu</span> <span class="bracket-lt">}</span>
+                    <br>
+                    <p class="section-subhead-lt" style="margin-top: 20px;">Our unique selection features international dishes ranging from Italian to Indian, Japanese to Mexican, and much more.</p>
+                </div> -->
+
+
+
+        </div>
+    </section>
+
+
+    <!-- menu content -->
+    <div class="bd-example container-fluid" style="padding-bottom: 60px;">
+        <div class="row mx-auto" style="margin-top: 60px;">
+            <div class="col-sm-6 mx-auto" style="margin-bottom: 20px;">
+                <p>We will gladly accommodate allergy restrictions, vegan/vegetarian diets or any other requests. Ask
+                    your server about our selection of fine desserts and children’s menu.</p>
+            </div>
+
+            <!-- menu tabs -->
+            <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="appetizers-tab" data-bs-toggle="tab"
+                        data-bs-target="#appetizers" type="button" role="tab" aria-controls="appetizers"
+                        aria-selected="false">Appetizers</button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="aLaCarte-tab" data-bs-toggle="tab" data-bs-target="#aLaCarte"
+                        type="button" role="tab" aria-controls="aLaCarte" aria-selected="false">A la Carte</button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="entrees-tab" data-bs-toggle="tab" data-bs-target="#entrees"
+                        type="button" role="tab" aria-controls="entrees" aria-selected="false">Entrées</button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="beverages-tab" data-bs-toggle="tab" data-bs-target="#beverages"
+                        type="button" role="tab" aria-controls="beverages" aria-selected="false">Beverages</button>
+                </li>
+
+
+            </ul>
+
+            <!-- menu tab content begins -->
+            <div class="tab-content" id="myTabContent">
+
+                <!-- APPETIZERS -->
+                <div class="tab-pane fade active show" id="appetizers" role="tabpanel" aria-labelledby="appetizers-tab">
+                    <div class="row mx-auto" style="padding-top: 20px;">
+                        <div class="col-sm-4">
+                            <h3>Appetizers</h3>
+                        </div>
+                    </div>
+
+                    <!-- row 1 -->
+                    <div class="row mx-auto">
+                        <div class="col-sm-6 mx-auto" style="padding-right: 15px; padding-left: 15px;">
+                            <img class="img-fluid" src="images/crostini_bread.jpeg" alt="Crostini Bread. $8">
+                            <p class="menu" style="padding-top: 10px; padding-bottom: 40px;">
+                                <strong><em>Crostini Bread. $8</em></strong>
+                                <br>
+                                Toasted slices of French baguette topped with garlic butter, sweet peppers, parsley, and
+                                mozzarella.
+                            </p>
+                        </div>
+
+                        <div class="col-sm-6 mx-auto" style="padding-right: 15px; padding-left: 15px;">
+                            <img class="img-fluid" src="images/greek_pizza.jpeg" alt="Crostini Bread. $8">
+                            <p class="menu" style="padding-top: 10px; padding-bottom: 40px;">
+                                <strong><em>Greek Pizza. $10</em></strong>
+                                <br>
+                                Creamy pesto spread on warm flatbread, topped with kalamata tapenade, fresh tomatoes,
+                                and feta cheese.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- row 2 -->
+                    <div class="row mx-auto">
+                        <div class="col-sm-6 mx-auto" style="padding-right: 15px; padding-left: 15px;">
+                            <img class="img-fluid" src="images/nachos.jpeg" alt="Crostini Bread. $8">
+                            <p class="menu" style="padding-top: 10px; padding-bottom: 40px;">
+                                <strong><em>Nachos Grande. $11</em></strong>
+                                <br>
+                                Piled high with peppers, onions, beans, cheese, and green chili. Served with our house
+                                salsa and sour cream garnish.
+                            </p>
+                        </div>
+
+                        <div class="col-sm-6 mx-auto" style="padding-right: 15px; padding-left: 15px;">
+                            <img class="img-fluid" src="images/sushi.jpeg" alt="Crostini Bread. $8">
+                            <p class="menu" style="padding-top: 10px; padding-bottom: 40px;">
+                                <strong><em>Nori Sushi Roll. $9</em></strong>
+                                <br>
+                                Scallion, daikon radish, carrot, and red pepper make this vegan delicacy a tasty treat.
+                                With wasabi, pickled ginger, and soy sauce.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- row 3 -->
+                    <div class="row mx-auto">
+                        <div class="col-sm-6 mx-auto" style="padding-right: 15px; padding-left: 15px;">
+                            <img class="img-fluid" src="images/artichoke_dip.jpeg" alt="Crostini Bread. $8">
+                            <p class="menu" style="padding-top: 10px; padding-bottom: 40px;">
+                                <strong><em>Warm Artichoke Parmesan Dip. $10</em></strong>
+                                <br>
+                                Served with pita points and chips.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- A LA CARTE -->
+                <div class="tab-pane fade" id="aLaCarte" role="tabpanel" aria-labelledby="aLaCarte-tab">
+                    <div class="row mx-auto" style="padding-top: 20px;">
+                        <div class="col-sm-4">
+                            <h3>A la Carte</h3>
+                        </div>
+                    </div>
+
+                    <!-- row 1 -->
+                    <div class="row mx-auto">
+                        <div class="col-sm-6 mx-auto" style="padding-right: 15px; padding-left: 15px;">
+                            <img class="img-fluid" src="images/chips_salsa.jpeg" alt="Crostini Bread. $8">
+                            <p class="menu" style="padding-top: 10px; padding-bottom: 40px;">
+                                <strong><em>Chips and Salsa. $5</em></strong>
+                                <br>
+                                Tortilla chips paired with our house salsa and sour cream.
+                            </p>
+                        </div>
+
+                        <div class="col-sm-6 mx-auto" style="padding-right: 15px; padding-left: 15px;">
+                            <img class="img-fluid" src="images/house_salad.jpeg" alt="Crostini Bread. $8">
+                            <p class="menu" style="padding-top: 10px; padding-bottom: 40px;">
+                                <strong><em>House Salad. $6</em></strong>
+                                <br>
+                                Gourmet greens with carrot, red cabbage, cucumber, and tomato.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- row 2 -->
+                    <div class="row mx-auto">
+                        <div class="col-sm-6 mx-auto" style="padding-right: 15px; padding-left: 15px;">
+                            <img class="img-fluid" src="images/tom_yum_soup.jpeg" alt="Crostini Bread. $8">
+                            <p class="menu" style="padding-top: 10px; padding-bottom: 40px;">
+                                <strong><em>Tom Yum Soup. $6</em></strong>
+                                <br>
+                                Beans and rice in a spicy Thai coconut broth with scallions and fresh ginger.
+                            </p>
+                        </div>
+
+                        <div class="col-sm-6 mx-auto" style="padding-right: 15px; padding-left: 15px;">
+                            <img class="img-fluid" src="images/sesameSeed_chicken_salad.jpeg" alt="Crostini Bread. $8">
+                            <p class="menu" style="padding-top: 10px; padding-bottom: 40px;">
+                                <strong><em>Sesame Ginger-Chicken or Tofu Salad. $14</em></strong>
+                                <br>
+                                Tender strips of chicken or tofu seared in special sauce over a bed of greens with feta
+                                and sesame soy dressing.
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ENTREES -->
+                <div class="tab-pane fade" id="entrees" role="tabpanel" aria-labelledby="entrees-tab">
+
+                    <!-- entrees header -->
+                    <div class="row mx-auto" style="padding-top: 20px;">
+                        <div class="col-sm-12">
+                            <h3>Entrées</h3>
+                            <p class="menu">All entrées include your choice of soup or salad.</p>
+                        </div>
+                    </div>
+
+                    <!-- secondary tabs -->
+                    <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="curry-tab" data-bs-toggle="tab" data-bs-target="#curry"
+                                type="button" role="tab" aria-controls="curry" aria-selected="false">Curry</button>
+                        </li>
+
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="crepes-tab" data-bs-toggle="tab" data-bs-target="#crepes"
+                                type="button" role="tab" aria-controls="crepes" aria-selected="false">Crêpes</button>
+                        </li>
+
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pasta-tab" data-bs-toggle="tab" data-bs-target="#pasta"
+                                type="button" role="tab" aria-controls="pasta" aria-selected="false">Pasta</button>
+                        </li>
+
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="specialties-tab" data-bs-toggle="tab"
+                                data-bs-target="#specialties" type="button" role="tab" aria-controls="specialties"
+                                aria-selected="true">Specialties</button>
+                        </li>
+                    </ul>
+
+                    <!-- secondary tab content begins -->
+                    <div class="tab-content" id="myTabContent">
+
+                        <!-- CURRY -->
+                        <div class="tab-pane fade active show" id="curry" role="tabpanel" aria-labelledby="curry-tab">
+                            <div class="row mx-auto" style="padding-top: 20px;">
+                                <div class="col-sm-6">
+                                    <h5>Curry</h5>
+                                    <p class="menu">All curry dishes are simmered with fresh garlic and ginger and
+                                        served over a bed of jasmine rice. <strong>Chicken or Tofu $17; Shrimp
+                                            $19.</strong></p>
+                                </div>
+                            </div>
+
+                            <!-- row 1 -->
+                            <div class="row mx-auto">
+                                <div class="col-sm-6 mx-auto" style="padding-right: 15px; padding-left: 15px;">
+                                    <img class="img-fluid" src="images/green_thai_coconut.jpeg"
+                                        alt="Crostini Bread. $8">
+                                    <p class="menu" style="padding-top: 10px; padding-bottom: 40px;">
+                                        <strong><em>Green Thai Coconut.</em></strong>
+                                        <br>
+                                        Gourmet greens with carrot, red cabbage, cucumber, and tomato.
+                                    </p>
+                                </div>
+
+                                <div class="col-sm-6 mx-auto" style="padding-right: 15px; padding-left: 15px;">
+                                    <img class="img-fluid" src="images/thai_red_coconut.jpeg" alt="Crostini Bread. $8">
+                                    <p class="menu" style="padding-top: 10px; padding-bottom: 40px;">
+                                        <strong><em>Red Thai Coconut.</em></strong>
+                                        <br>
+                                        This spicy full-bodied curry is a house favorite.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- row 2 -->
+                            <div class="row mx-auto">
+                                <div class="col-sm-6 mx-auto" style="padding-right: 15px; padding-left: 15px;">
+                                    <img class="img-fluid" src="images/yellow_curry.jpeg" alt="Crostini Bread. $8">
+                                    <p class="menu" style="padding-top: 10px; padding-bottom: 40px;">
+                                        <strong><em>Yellow Indian Curry.</em></strong>
+                                        <br>
+                                        A mild blend of sweet spices, garnished with raita.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- CRÊPES -->
+                        <div class="tab-pane fade" id="crepes" role="tabpanel" aria-labelledby="crepes-tab">
+                            <div class="row mx-auto" style="padding-top: 20px;">
+                                <div class="col-sm-4">
+                                    <h5>Crêpes</h5>
+                                    <p class="menu">Two homemade crepess served with jasmine rice and chef's steamed
+                                        vegetables.</p>
+                                </div>
+                            </div>
+
+                            <!-- row 1 -->
+                            <div class="row mx-auto">
+                                <div class="col-sm-6 mx-auto" style="padding-right: 15px; padding-left: 15px;">
+                                    <img class="img-fluid" src="images/seafood_crepe.jpeg" alt="Crostini Bread. $8">
+                                    <p class="menu" style="padding-top: 10px; padding-bottom: 40px;">
+                                        <strong><em>Seafood Crêpes. $21</em></strong>
+                                        <br>
+                                        Blend of baby shrimp and flaked crab with garlic, onions and sweet peppers.
+                                        Topped with shrimp in sherry cream.
+                                    </p>
+                                </div>
+
+                                <div class="col-sm-6 mx-auto" style="padding-right: 15px; padding-left: 15px;">
+                                    <img class="img-fluid" src="images/tofu_crepe.jpeg" alt="Crostini Bread. $8">
+                                    <p class="menu" style="padding-top: 10px; padding-bottom: 40px;">
+                                        <strong><em>Veggie Tofu. $18</em></strong>
+                                        <br>
+                                        A delightful blend of sautéed, marinated tofu and vegetables topped with creamy
+                                        béchamel.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- PASTA -->
+                        <div class="tab-pane fade" id="pasta" role="tabpanel" aria-labelledby="pasta-tab">
+                            <div class="row mx-auto" style="padding-top: 20px;">
+                                <div class="col-sm-4">
+                                    <h5>Pasta</h5>
+                                </div>
+                            </div>
+
+                            <!-- row 1 -->
+                            <div class="row mx-auto">
+                                <div class="col-sm-6 mx-auto" style="padding-right: 15px; padding-left: 15px;">
+                                    <img class="img-fluid" src="images/linguine_shrimp.jpeg" alt="Crostini Bread. $8">
+                                    <p class="menu" style="padding-top: 10px; padding-bottom: 40px;">
+                                        <strong><em>Linguine Shrimp and Scallops. $20</em></strong>
+                                        <br>
+                                        With sautéed peppers, onions and cherry tomatoes in a light white wine and
+                                        garlic sauce.
+                                    </p>
+                                </div>
+
+                                <div class="col-sm-6 mx-auto" style="padding-right: 15px; padding-left: 15px;">
+                                    <img class="img-fluid" src="images/seafood_alfredo.jpeg" alt="Crostini Bread. $8">
+                                    <p class="menu" style="padding-top: 10px; padding-bottom: 40px;">
+                                        <strong><em>Seafood Alfredo. $20</em></strong>
+                                        <br>
+                                        Shrimp and crab in sherry cream with asparagus tips and baby tomatoes. Sprinkled
+                                        with parmesan and parsley.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- row 2 -->
+                            <div class="row mx-auto">
+                                <div class="col-sm-6 mx-auto" style="padding-right: 15px; padding-left: 15px;">
+                                    <img class="img-fluid" src="images/sweet_potato_pasta.jpeg"
+                                        alt="Crostini Bread. $8">
+                                    <p class="menu" style="padding-top: 10px; padding-bottom: 40px;">
+                                        <strong><em>Sweet Potato Peanut Pasta. $16</em></strong>
+                                        <br>
+                                        Sweet potatoes and mixed veggies sauteed in soy sauce and garlic over rice
+                                        noodles in a luscious peanut sauce. <em>Add chicken, tofu ($4) or shrimp
+                                            ($5).</em>
+                                    </p>
+                                </div>
+
+                                <div class="col-sm-6 mx-auto" style="padding-right: 15px; padding-left: 15px;">
+                                    <img class="img-fluid" src="images/pesto_pasta.jpeg" alt="Crostini Bread. $8">
+                                    <p class="menu" style="padding-top: 10px; padding-bottom: 40px;">
+                                        <strong><em>Veggie Pesto Pasta. $16</em></strong>
+                                        <br>
+                                        Sun-dried tomatoes, portabellas, onions, sweet peppers and artichoke hearts
+                                        tossed with linguine and fresh pesto. <em>Add chicken, tofu ($4) or shrimp
+                                            ($5).</em>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- HOUSE SPECIALTIES -->
+                        <div class="tab-pane fade" id="specialties" role="tabpanel" aria-labelledby="specialties-tab">
+                            <div class="row mx-auto" style="padding-top: 20px;">
+                                <div class="col-sm-4">
+                                    <h5> House Specialties</h5>
+                                </div>
+                            </div>
+
+                            <!-- row 1 -->
+                            <div class="row mx-auto">
+                                <div class="col-sm-6 mx-auto" style="padding-right: 15px; padding-left: 15px;">
+                                    <img class="img-fluid" src="images/stirfry.jpeg" alt="Crostini Bread. $8">
+                                    <p class="menu" style="padding-top: 10px; padding-bottom: 40px;">
+                                        <strong><em>Daisy Stir Fry.</em></strong>
+                                        <br>
+                                        Sautéed veggies with baby corn, water chestnuts and snow peas in sweet sesame
+                                        ginger sauce. <em>With chicken, tofu ($17) or shrimp ($19).</em>
+                                    </p>
+                                </div>
+
+                                <div class="col-sm-6 mx-auto" style="padding-right: 15px; padding-left: 15px;">
+                                    <img class="img-fluid" src="images/bolivian.jpeg" alt="Crostini Bread. $8">
+                                    <p class="menu" style="padding-top: 10px; padding-bottom: 40px;">
+                                        <strong><em>Bolivian Al Gûsto.</em></strong>
+                                        <br>
+                                        Pan-seared veggies in a robust red wine sweet chili sauce with rice and beans.
+                                        <em>With chicken, tofu ($17) or shrimp ($19).</em>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- row 2 -->
+                            <div class="row mx-auto">
+                                <div class="col-sm-6 mx-auto" style="padding-right: 15px; padding-left: 15px;">
+                                    <img class="img-fluid" src="images/pollo_de_taos300.jpg" alt="Crostini Bread. $8">
+                                    <p class="menu" style="padding-top: 10px; padding-bottom: 40px;">
+                                        <strong><em>Pollo de Taos. $18</em></strong>
+                                        <br>
+                                        Breaded chicken breasts seared in green chili topped with melted cheese. Served
+                                        with rice, beans, and tortilla chips garnish.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- secondary tab content ends -->
+                </div>
+
+                <!-- BEVERAGES -->
+                <div class="tab-pane fade" id="beverages" role="tabpanel" aria-labelledby="beverages-tab">
+                    <div class="row mx-auto" style="padding-top: 20px;">
+                        <div class="col-sm-4">
+                            <h3>Beverages</h3>
+                            <p class="menu">All beverages are $2.</p>
+                        </div>
+                    </div>
+
+                    <!-- row 1 -->
+                    <div class="row mx-auto">
+                        <div class="col-sm-4 mx-auto" style="padding-right: 15px; padding-left: 15px;">
+                            <img class="img-fluid" src="images/raspberry_juice.jpeg" alt="Crostini Bread. $8">
+                            <p class="menu" style="padding-top: 10px; padding-bottom: 40px;">
+                                <strong><em>Raspberry Juice.</em></strong>
+                            </p>
+                        </div>
+
+                        <div class="col-sm-4 mx-auto" style="padding-right: 15px; padding-left: 15px;">
+                            <img class="img-fluid" src="images/orange_peach_juice.jpeg" alt="Crostini Bread. $8">
+                            <p class="menu" style="padding-top: 10px; padding-bottom: 40px;">
+                                <strong><em>Mandarin Peach Juice.</em></strong>
+                            </p>
+                        </div>
+
+                        <div class="col-sm-4 mx-auto" style="padding-right: 15px; padding-left: 15px;">
+                            <img class="img-fluid" src="images/lemonade.jpeg" alt="Crostini Bread. $8">
+                            <p class="menu" style="padding-top: 10px; padding-bottom: 40px;">
+                                <strong><em>Lemonade.</em></strong>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- row 2 -->
+                    <div class="row mx-auto">
+                        <div class="col-sm-4 mx-auto" style="padding-right: 15px; padding-left: 15px;">
+                            <img class="img-fluid" src="images/iced_tea.jpeg" alt="Crostini Bread. $8">
+                            <p class="menu" style="padding-top: 10px; padding-bottom: 40px;">
+                                <strong><em>Iced Tea.</em></strong>
+                            </p>
+                        </div>
+
+                        <div class="col-sm-4 mx-auto" style="padding-right: 15px; padding-left: 15px;">
+                            <img class="img-fluid" src="images/hot_tea.jpeg" alt="Crostini Bread. $8">
+                            <p class="menu" style="padding-top: 10px; padding-bottom: 40px;">
+                                <strong><em>Hot Tea.</em></strong>
+                            </p>
+                        </div>
+
+                        <div class="col-sm-4 mx-auto" style="padding-right: 15px; padding-left: 15px;">
+                            <img class="img-fluid" src="images/coffee.jpeg" alt="Crostini Bread. $8">
+                            <p class="menu" style="padding-top: 10px; padding-bottom: 40px;">
+                                <strong><em>Regular or Decaf Coffee.</em></strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- menu tab content ends -->
+            </div>
+        </div>
+    </div>
+
+    <!-- reservations -->
+    <section id="reservations" class="jumbotron parallaxReservations" style="margin-top: 100px;">
+        <div class="container-fluid" style="padding-top: 200px;">
+            <div class="row">
+                <div class="col-sm-12 section-head">
+                    <span class="bracket-lt">{</span> <span class="section-head-lt">Reservations</span> <span
+                        class="bracket-lt">}</span>
+                    <br>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 mx-auto">
+                    <p class="section-subhead-lt" style="margin-top: 20px;">Reservations are required to dine at Purple
+                        Chopstix, so book your table today!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- reservations form -->
+    <div class="container-fluid" style="padding: 60px;">
+        <div class="row">
+            <div class="col-md-4 col-sm-8 col-xs-12 mx-auto bootstrap-iso" style="padding-bottom: 60px;">
+                <form method="post">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label requiredField" for="date">
+                            Date
+                            <span class="asteriskField">
+                                *
+                            </span>
+                        </label>
+                        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text" />
+                    </div>
+                    <div class="form-group form-group-sm">
+                        <label class="control-label " for="select">
+                            Time
+                        </label>
+                        <select class="select form-control" id="select" name="select">
+                            <option value="Select Time">
+                                Select Time
+                            </option>
+                            <option value="5:00 p.m.">
+                                5:00 p.m.
+                            </option>
+                            <option value="5:15 p.m.">
+                                5:15 p.m.
+                            </option>
+                            <option value="5:30 p.m.">
+                                5:30 p.m.
+                            </option>
+                            <option value="5:45 p.m.">
+                                5:45 p.m.
+                            </option>
+                            <option value="6:00 p.m.">
+                                6:00 p.m.
+                            </option>
+                            <option value="6:15 p.m.">
+                                6:15 p.m.
+                            </option>
+                            <option value="6:30 p.m.">
+                                6:30 p.m.
+                            </option>
+                            <option value="6:45 p.m.">
+                                6:45 p.m.
+                            </option>
+                            <option value="7:00 p.m.">
+                                7:00 p.m.
+                            </option>
+                            <option value="7:15 p.m.">
+                                7:15 p.m.
+                            </option>
+                            <option value="8:00 p.m.">
+                                8:00 p.m.
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group form-group-sm">
+                        <label class="control-label " for="select1">
+                            Sunday Brunch Time
+                        </label>
+                        <select class="select form-control" id="select1" name="select1">
+                            <option value="Select Time">
+                                Select Time
+                            </option>
+                            <option value="11:00 a.m.">
+                                11:00 a.m.
+                            </option>
+                            <option value="11:15 a.m.">
+                                11:15 a.m.
+                            </option>
+                            <option value="11:30 a.m.">
+                                11:30 a.m.
+                            </option>
+                            <option value="11:45 a.m.">
+                                11:45 a.m.
+                            </option>
+                            <option value="12:00 p.m.">
+                                12:00 p.m.
+                            </option>
+                            <option value="12:15 p.m.">
+                                12:15 p.m.
+                            </option>
+                            <option value="12:30 p.m.">
+                                12:30 p.m.
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group form-group-sm">
+                        <label class="control-label requiredField" for="name">
+                            Name
+                            <span class="asteriskField">
+                                *
+                            </span>
+                        </label>
+                        <input class="form-control" id="name" name="name" type="text" />
+                    </div>
+                    <div class="form-group form-group-sm">
+                        <label class="control-label requiredField" for="email">
+                            Email
+                            <span class="asteriskField">
+                                *
+                            </span>
+                        </label>
+                        <input class="form-control" id="email" name="email" type="text" />
+                    </div>
+                    <div class="form-group form-group-sm">
+                        <label class="control-label " for="tel">
+                            Phone Number
+                        </label>
+                        <input class="form-control" id="tel" name="tel" type="text" />
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <button class="btn btn-custom " name="submit" type="submit">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- reservations carousel -->
+            <div id="carouselExampleCaptions" class="carousel slide col-md-8 col-md-8 col-xs-12 mx-auto"
+                data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- Carousel Indicators -->
+                    <div id="carouselExampleCaptions" class="carousel-indicators">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselIndicators" data-slide-to="0" class=""></li>
+                            <li data-target="#carouselIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselIndicators" data-slide-to="2"></li>
+                            <li data-target="#carouselIndicators" data-slide-to="3"></li>
+                        </ol>
+
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                            aria-label="Slide 1"></button>
+
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                            aria-label="Slide 2" class=""></button>
+
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                            aria-current="true" aria-label="Slide 3" class="active"></button>
+
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                            aria-current="true" aria-label="Slide 4" class="active"></button>
+
+
+                    </div>
+
+                    <!-- Carousel Images -->
+                    <div class="carousel-item active">
+                        <img src="images/patio02.jpeg" class=".d-block w-100" alt="First slide">
+                        <div class="carousel-caption d-none d-md-block">
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="images/facade01.jpeg" class=".d-block w-100" alt="Second slide">
+                        <div class="carousel-caption d-none d-md-block">
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="images/interior_window.jpeg" class=".d-block w-100" alt="Third slide">
+                        <div class="carousel-caption d-none d-md-block">
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="images/people_dining.jpeg" class=".d-block w-100" alt="Fourth slide">
+                        <div class="carousel-caption d-none d-md-block">
+                        </div>
+                    </div>
+
+
+                    <!-- Previous & Next Arrows -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="prev">
+                        <span class="visually-hidden">Previous</span>
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+                    </button>
+
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="next">
+                        <span class="visually-hidden">Next</span>
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- about -->
+            <section id="about">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12 section-head">
+                            <span class="bracket">{</span> <span class="section-head">About</span> <span
+                                class="bracket">}</span>
+                        </div>
+                    </div>
+
+                    <br>
+                    <br>
+
+                    <!-- image -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img class="img-fluid" src="images/amelia_gabe_fisher.jpeg" style="padding-bottom: 20px;"
+                                width="500" height="auto">
+                        </div>
+
+                        <!-- text info -->
+                        <div class="col-md-6 container-fluid">
+                            <p>
+                                <h5>
+                                    HOURS OF OPERATION
+                                </h5>
+                                <em>Reservation Only</em><br>
+                                Wednesday – Saturday 5 p.m. to 8 p.m.<br>
+                                Sunday Brunch 11 a.m. to 1 p.m.
+                            </p>
+
+                            <br>
+
+                            <p>
+                                <h5>
+                                    CATERING
+                                </h5>
+                                Purple Chopstix also offers catering and private parties. Please call (740) 592-4798 for
+                                menu options and details.
+                            </p>
+
+                            <br>
+
+                            <p>
+                                <h5>
+                                    OUR STORY
+                                </h5>
+                                Ed Fisher opened Purple Chopstix in 1989. For over 25 years, he’s provided Athens with a
+                                unique and eclectic variety of delicious food.
+
+                                These days, his children Amelia and Gabe (left) join him in the kitchen, helping prepare
+                                all the Chopstix favorites and crafting new specials weekly.
+                            </p>
+
+                            <br>
+
+                            <p>
+                                <h5>
+                                    PARKING
+                                </h5>
+                                Purple Chopstix has a small lot in front of the restaurant and additional parking is
+                                available across the street in the Hocking Valley Bank parking lot.
+                            </p>
+
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- contact -->
+            <section id="contact">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12 section-head">
+                            <span class="bracket">{</span> <span class="section-head">Contact Us</span> <span
+                                class="bracket">}</span>
+                        </div>
+                    </div>
+
+                    <br>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-4" style="margin-right: 40px; margin-bottom: 60px;">
+                            <p>
+                                <h5>
+                                    PHONE NUMBER
+                                </h5>
+                                (740) 592-4798
+                            </p>
+
+                            <br>
+
+                            <p>
+                                <h5>
+                                    EMAIL ADDRESS
+                                </h5>
+                                hello@purplechopstix.com
+                            </p>
+
+                            <br>
+
+                            <p>
+                                <h5>
+                                    ADDRESS
+                                </h5>
+                                371 Richland Avenue <br>
+                                Athens, OH 45701
+                            </p>
+
+                            <br>
+
+                            <p>
+                                <h5>
+                                    SOCIAL MEDIA
+                                </h5>
+                            </p>
+
+                            <!-- social media icons -->
+                            <div class="row">
+                                <a class="nav-link js-scroll-trigger" id="facebook"
+                                    href="https://www.facebook.com/purplechopstix/" target="_blank"
+                                    rel="noopener noreferrer"></a>
+
+                                <a class="nav-link js-scroll-trigger" id="twitter" target="_blank"
+                                    rel="noopener noreferrer"></a>
+
+                                <a class="nav-link js-scroll-trigger" id="instagram" target="_blank"
+                                    rel="noopener noreferrer"></a>
+                            </div>
+
+
+                        </div>
+
+                        <!-- map -->
+                        <div class="col-md-7 map-responsive">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3086.8067175433125!2d-82.10736844965233!3d39.31530452970744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x884873c26920b799%3A0x5677539f54990afc!2sPurple%20Chopstix!5e0!3m2!1sen!2sus!4v1633359703814!5m2!1sen!2sus"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- footer -->
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col">
+                            <p style="color: white;">Amanda Weisbrod © 2021</p>
+                        </div>
+                        <div class="col">
+                            <p class="float-right">
+                                <a class="nav-link js-scroll-trigger" href="#page-top" style="color: white;">Back to top<a>
+                                <!-- <a href="#page-top">Back to top</a> -->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- Bootstrap JavaScript dependencies: first jQuery, then Popper.js, then Bootstrap JS -->
+            <script src='https://unpkg.com/jquery/dist/jquery.min.js'></script>
+            <script src='https://unpkg.com/popper.js/dist/umd/popper.min.js'></script>
+            <script src='https://unpkg.com/bootstrap/dist/js/bootstrap.min.js'></script>
+
+            <!-- project JavaScript dependencies -->
+            <script src="js/jquery.easing.min.js"></script>
+            <script src="js/scrolling.js"></script>
+
+            <!-- internal JavaScript -->
+            <script>
+            </script>
+
+</body>
+
+</html>
